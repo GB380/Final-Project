@@ -6,15 +6,12 @@ using System.Web.Mvc;
 
 namespace FinalProjectSite.Controllers
 {
-    public class HomeController : Controller
+    public class EncryptionController : Controller
     {
-        // GET: Home
-        [Authorize]
-        public ActionResult Index()
+        // GET: Encryption
+        public ActionResult Encryption()
         {
             return View();
         }
-
-        
     }
 }

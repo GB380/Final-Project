@@ -184,21 +184,34 @@ namespace FinalProjectSite.Controllers
         }
 
         [NonAction]
-        public void SendVerificationLinkEmail(string Email_Address, string activationcode)
+        public void SendVerificationLinkEmail(string Email_Address, string activationcode, string emailFor = "VerifyAccount")
         {
             //Verify Email Link
-            var verifyUrl = "/User/VerifyAccount/" + activationcode;
+            var verifyUrl = "/User/"+emailFor+"/" + activationcode;
             var link = Request.Url.AbsoluteUri.Replace(Request.Url.PathAndQuery, verifyUrl);
 
             var fromEmail = new MailAddress("onlinesecsolution@gmail.com", "Online Security Solutions");
             var toEmail = new MailAddress(Email_Address);
             var fromEmailPassword = "BrightonUniversity1"; //Password here
-            string subject = "Your account has been successfully created!";
 
-            
-            string body = "<br/><br/> Your Online Security Solutions account has been" +
-                "successfully created. Please click on the below link to verify your account" +
-                "<a href='" +link+ "'>" +link+ "</a> ";
+            string subject = "";
+            string body = "";
+            if (emailFor == "VerifyAccount")
+            {
+                subject = "Your account has been successfully created!";
+
+
+                body = "<br/><br/> Your Online Security Solutions account has been" +
+                    "successfully created. Please click on the below link to verify your account" +
+                    "<a href='" + link + "'>" + link + "</a> ";
+            }
+            else if (emailFor == "ResetPassword")
+            {
+                subject = "ResetPassword";
+                body = "Hi, <br/>br/> We recieved a request to reset your password for your account. Please click on the below link to reset your password." +
+                    "<br/><br/><a href="+link+">Reset Password Link</a>";
+            }
+       
 
             var smtp = new SmtpClient
             {
@@ -220,6 +233,97 @@ namespace FinalProjectSite.Controllers
 
         }
 
+
+        // Forgot Password
+
+        public ActionResult ForgotPassword()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult ForgotPassword(string EmailAddress)
+        {
+            // verify Email Address
+            // If Valid then generate Reset Password Link
+            //Send Password Reset Email
+            string message = "";
+            bool status = false;
+
+
+            using (UserDatabaseEntities dc = new UserDatabaseEntities())
+            {
+                var account = dc.Users.Where(a => a.Email_Address == EmailAddress).FirstOrDefault(); // Searches if there is an account already
+                if (account != null)
+                {
+                    //send email for password reset
+                    string resetCode = Guid.NewGuid().ToString();
+                    SendVerificationLinkEmail(account.Email_Address, resetCode, "ResetPassword");
+                    account.ResetPasswordCode = resetCode;
+                    //Line added to avoid confirm password not matching issue, as the confirm password property that was added
+                    // to the model class.
+                    dc.Configuration.ValidateOnSaveEnabled = false;
+                    dc.SaveChanges();
+                    message = "The Reset Password Link has been sent to your Email Address.";
+                }
+                else
+                {
+                    message = "That Email Address has not been registered. Please try again or register for an Account";
+                }
+            }
+            ViewBag.Message = message;
+            return View();
+        }
+        
+
+        public ActionResult ResetPassword(string id)
+        {
+            //Verify the reset password link
+            //find account associated with the link
+            //redirect to new password page
+            using (UserDatabaseEntities dc = new UserDatabaseEntities())
+            {
+                var user = dc.Users.Where(a => a.ResetPasswordCode == id).FirstOrDefault();
+                if (user != null)
+                {
+                    ResetPasswordModel model = new ResetPasswordModel();
+                    model.ResetCode = id;
+                    return View(model);
+                }
+                else
+                {
+                    return HttpNotFound();
+                }
+            }
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult ResetPassword(ResetPasswordModel model)
+        {
+            var message = "";
+            if (ModelState.IsValid)
+            {
+                using  (UserDatabaseEntities dc = new UserDatabaseEntities())
+                {
+                    var user = dc.Users.Where(a => a.ResetPasswordCode == model.ResetCode).FirstOrDefault();
+                    if (user != null)
+                    {
+                        user.Password = Crypto.Hash(model.NewPassword);
+                        user.ResetPasswordCode = "";
+                        dc.Configuration.ValidateOnSaveEnabled = false; // same password match issue
+                        dc.SaveChanges();
+                        message = "New Password Updated Successfully";
+                    }
+                }
+            }
+            else
+            {
+                message = "Password Reset Unsuccessful. Please contact an Administrator";
+            }
+            ViewBag.Message = message;
+            return View(model);
+        }
     }
    
 }

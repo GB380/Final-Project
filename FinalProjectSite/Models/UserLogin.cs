@@ -11,9 +11,9 @@ namespace FinalProjectSite.Models
         [Display(Name = "Email ID")]
         [Required(AllowEmptyStrings = false, ErrorMessage = "Email Address Required")]
         public string Email_address { get; set; }
-    
-    
-    [Required(AllowEmptyStrings = false, ErrorMessage = "Password Required")]
+
+        [DataType(DataType.Password)]
+        [Required(AllowEmptyStrings = false, ErrorMessage = "Password Required")]
     public string Password { get; set; }
 
     [Display(Name = "Remember Me")]

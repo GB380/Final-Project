@@ -6,15 +6,12 @@ using System.Web.Mvc;
 
 namespace FinalProjectSite.Controllers
 {
-    public class HomeController : Controller
+    public class AboutController : Controller
     {
-        // GET: Home
-        [Authorize]
-        public ActionResult Index()
+        // GET: About
+        public ActionResult AboutUs()
         {
             return View();
         }
-
-        
     }
 }

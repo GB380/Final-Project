@@ -6,15 +6,12 @@ using System.Web.Mvc;
 
 namespace FinalProjectSite.Controllers
 {
-    public class HomeController : Controller
+    public class QANDAController : Controller
     {
-        // GET: Home
-        [Authorize]
-        public ActionResult Index()
+        // GET: QANDA
+        public ActionResult QANDA()
         {
             return View();
         }
-
-        
     }
 }
