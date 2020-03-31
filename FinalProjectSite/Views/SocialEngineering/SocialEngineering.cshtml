@@ -1,8 +1,70 @@
-﻿
-@{
-    ViewBag.Title = "SocialEngineering";
-}
+﻿<!DOCTYPE html>
+<html>
+<head>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    @{
+        ViewBag.Title = "SocialEngineering";
+    }
+</head>
+<body>
+    <h1>Social Engineering</h1>
+    <p>Welcome to the Social Engineering Module.</p>
+    <img class="img-responsive" src="~/images/Social-Engineering-Main.jpg" alt="Social Engineering Image">
+    <section>
+        <p>
+            Social Engineering has been a security issue for a long time. It's a subtle method of attack and you may not have realised you have been a victim of it. Put simply Social Engineering is "is the psychological manipulation of people into performing actions or divulging confidential information. This differs from social engineering within the social sciences, which does not concern the divulging of confidential information."(Anderson, 2008) It is very
+            effective and an attack of this kind is usually carried out on a large scale. An example of an attack that you may have heard of is the Radicalisation of young people by terrorist organisations such as the Islamic State (ISIS). Goat, (2019) discusses this in their article where typically young impressionable teenagers are added by people masquerading to be people their age and they build rapport with them then suggest people to follow to get into a wider community and eventually an echo chamber. But for most of the public and management in businesses the scneario that you are likely to face Goat(2019) says "They find a member of staff, befriend them using a fake profile and bond with them to start introducing ideas about how the company they work for is corrupt or is committing immoral acts. They start asking them to steal data from the company, usually by photographing it on their phones. They will always feed some sort of “us versus themˮ narrative to their target and often paint what they are doing as activism. The company loses data, money and may even collapse." The impact it has on businesses and potentially your own data and money is devastating so in this module you will learn different types of social engineering attacks such as Baiting, Phishing and Pretexting and
+            discover how best to not only protect your place of work but also yourself. Individual employees whilst they may not realise it have a big part to play in protecting their workplace or their their own information. Just a small piece of important concise information can give an attacker all they need to gain what they wanted.
+        </p>
+    </section>
+    <section>
+        <img class="img-responsive" src="~/images/phishing.jpg" alt="Social Engineering Image">
+        <p>There will be multiple sections in this module. One will explain the threats, one will show how to protect against it and the final section will quiz you on what you have learnt to help remember the key points throughout the module.</p>
 
-<h2>Social Engineering</h2>
-<p>test test</p>
+    </section>
+  
 
+
+
+
+
+
+    <footer>
+
+        <h2><u>References</u></h2>
+        <p>Anderson, R., 2008. Security Engineering: A Guide To Building Dependable Distributed Systems. 2nd ed. Indianapolis: Wiley Publishing Inc, p.17.</p>
+        <p>Goat, R., 2019. What Online Radicalisation Can Teach You About Security - Red Goat Cyber Security. [online] Red Goat Cyber Security. Available at: https://red-goat.com/social-engineering/online-radicalisation-and-se/ [Accessed 31 March 2020].</p>
+        <br />
+        <br />
+        <div>
+            <ul class="pagination pagination-lg">
+                <li class="page-item disabled">
+                    <a class="page-link" href="#">&laquo;</a>
+                </li>
+                <li class="page-item active">
+                    <a class="page-link" onclick="location.href='@Url.Action("SocialEngineering", "SocialEngineering")';return false;" >1</a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" onclick="location.href='@Url.Action("SocialEngineeringTwo", "SocialEngineering")';return false;">2</a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" onclick="location.href='@Url.Action("SocialEngineeringThree", "SocialEngineering")';return false;">3</a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="#">4</a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="#">5</a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" onclick="location.href='@Url.Action("SocialEngineeringTwo", "SocialEngineering")';return false;">&raquo;</a>
+                </li>
+            </ul>
+        </div>
+
+
+    </footer>
+</body>
+</html>

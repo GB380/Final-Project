@@ -13,5 +13,15 @@ namespace FinalProjectSite.Controllers
         {
             return View();
         }
+
+        public ActionResult SocialEngineeringTwo()
+        {
+            return View();
+        }
+
+        public ActionResult SocialEngineeringThree()
+        {
+            return View();
+        }
     }
 }

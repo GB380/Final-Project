@@ -110,9 +110,12 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="images\baiting.jpg" />
     <Content Include="images\blue-and-purple-cosmic-sky-956999.jpg" />
     <Content Include="images\homepage-banner.jpg" />
     <Content Include="images\index-banner.jpeg" />
+    <Content Include="images\phishing.jpg" />
+    <Content Include="images\Social-Engineering-Main.jpg" />
     <Content Include="images\surface-laptop-2-review-8119.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -202,6 +205,8 @@
     <Content Include="Views\QANDA\QANDA.cshtml" />
     <Content Include="Views\ContactUs\ContactUs.cshtml" />
     <Content Include="Views\Encryption\Encryption.cshtml" />
+    <Content Include="Views\SocialEngineering\SocialEngineeringTwo.cshtml" />
+    <Content Include="Views\SocialEngineering\SocialEngineeringThree.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
