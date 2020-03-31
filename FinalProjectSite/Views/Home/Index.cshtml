@@ -1,16 +1,42 @@
-﻿@{
+﻿<head>
+
+    <style>
+        #button-block {
+            background-color: lightslategrey;
+            
+        }
+
+    </style>
+</head>
+
+
+
+@{
     ViewBag.Title = "Index";
 }
 
-<h2>Online Security Solutions Homepage</h2>
+<h2><u>Online Security Solutions Homepage</u></h2>
 
-Welcome @HttpContext.Current.User.Identity.Name
+Welcome @HttpContext.Current.User.Identity.Name you have logged in successfully
 
-@if (Request.IsAuthenticated)
-{
-    using (Html.BeginForm("Logout", "User", FormMethod.Post, new { id = "logoutForm" }))
-    {
-        <a href="javascript:document.getElementById('logoutForm').submit()">Logout</a>
-    }
-}
+        <img class="img-responsive" src="~/images/index-banner.jpeg" alt="banner">
+      
+    <section>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus rutrum ex sit amet tristique dictum. Nulla consectetur ultricies aliquet. Praesent porta convallis ipsum, quis mattis ipsum tristique elementum. Phasellus vestibulum bibendum ex. Donec maximus arcu orci, eget vehicula sapien interdum vel. Quisque pretium non dolor eget laoreet. Phasellus nec dictum libero. Donec rhoncus lorem sit amet ante volutpat, nec cursus sem luctus. Nunc libero ante, malesuada non nulla id, vestibulum vestibulum risus. Nam maximus vestibulum odio, sed bibendum arcu pulvinar vel. Sed accumsan mattis tortor at pretium. Aliquam consectetur feugiat mauris et tristique.
+
+            Ut dui massa, interdum at urna sit amet, ullamcorper interdum odio. Maecenas nec nulla id enim faucibus congue luctus quis nulla. Integer eget tortor bibendum, pulvinar nibh in, suscipit nisi. Mauris a luctus enim. Ut ullamcorper ipsum eget felis aliquam, ac ultricies nunc dignissim. Aenean convallis enim mauris, in tempus turpis viverra eleifend. Proin porttitor, sem consequat venenatis suscipit, orci massa consequat enim, id ullamcorper nunc magna a velit. Donec massa sem, pretium ut placerat ac, ornare vitae lectus. Ut augue nisi, vestibulum eget porttitor sit amet, hendrerit vel risus. Aliquam sed interdum libero, sit amet euismod felis. Aenean eget sapien velit. In a consectetur sem, vel molestie mi. Proin accumsan porttitor arcu non sodales. Proin tempus ultricies libero, eu bibendum libero accumsan nec. Sed ex massa, ornare sed tempor molestie, ornare vel risus.
+
+            Pellentesque nec ex posuere, eleifend metus id, malesuada erat. Integer in sagittis quam. Sed eu elit vel dolor sollicitudin egestas eget ut odio. Nullam sapien nulla, placerat vitae aliquet euismod, bibendum at eros. Nunc et erat auctor metus ultrices pretium sit amet convallis turpis. Proin tempor cursus neque, in tristique augue. Nunc hendrerit, eros vitae mattis placerat, elit justo commodo sapien, et ullamcorper felis lectus interdum massa. Sed interdum orci vitae ligula posuere efficitur. Pellentesque molestie purus sem, ut maximus est gravida quis. Maecenas dapibus pretium sollicitudin.
+
+            Suspendisse tempor, lacus in ullamcorper sagittis, metus lacus mattis est, ut auctor eros elit quis ligula. Phasellus venenatis vitae ex eget bibendum. Aliquam erat volutpat. Praesent consectetur sagittis libero et pulvinar. Nullam id dolor eu tortor pellentesque tempor non in tellus. Fusce vel ullamcorper orci. Suspendisse convallis, ipsum ut consectetur sodales, eros dolor condimentum massa, quis commodo ex tortor a erat.
+
+            Sed ut sagittis eros. Donec dapibus tempor volutpat. Etiam laoreet ullamcorper condimentum. Etiam ultrices ligula ac velit vulputate, vitae interdum odio pulvinar. Nunc vel consequat elit, eu ullamcorper ipsum. Duis nec finibus nunc, maximus blandit erat. Nulla nec orci ut tortor rhoncus placerat. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis id maximus lacus, et facilisis orci. Ut finibus enim eu diam blandit, vitae pulvinar dolor tempor.
+            <img class="img-responsive" src="~/images/surface-laptop-2-review-8119.jpg" alt="paragraph image" align="left">
+        </p>
+
+       
+
+        </section>
+
 

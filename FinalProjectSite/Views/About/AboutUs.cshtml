@@ -1,9 +1,37 @@
-﻿@{
-    ViewBag.Title = "AboutUs";
-}
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="homepage.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    @{
+        ViewBag.Title = "AboutUs";
+    }
+</head>
+<body>
+    <h2>About Us</h2>
 
-<h2>About Us</h2>
+    <p>Online Security Solutions was created by George Brackpool in order to help provide guidance to the public, businesses and their employee's about various areas of cybersecurity. Whilst there are only a few module's currently more will be added in the future. Online Security is constantly changing due to technological development's, new software and new threats that are created every day in an attempt for malicious individuals to collect data for monetary or political reasons.</p>
+    <br />
+    <p>
+        A majority of people in the world are aware of how important security online is and typically are very good with basic measures to keep their data secure. For example, having a secure password with a mixture of capital letter's number's and a symbol. Using Face ID or fingerprint scanner's on their phone's. However there are some more subtle threats that most are not aware of and a good example which you can find here on this site is Social Engineering. On Online Security Solutions we will teach you
+        how to be safe and secure yourself in and out of the workplace.
+    </p>
 
-<p> Test test test</p>
+    <div name="review-div">
+
+        <p>"Online Security Solutions helped me become aware of threats that I would never of known existed and gave some useful tools and tips in order to secure my data and protect my place of work, which is becoming more important than ever in an increasingly connected world." - Steve Rickman (Employee at AeroNaught Systems LTD) </p>
+
+    </div>
+
+    <p>Register an account with us today and take control over your data and privacy! You will gain free access to all modules and the information they provide.</p>
+
+        @*using action link like this stops calling post method, state the View then the Controller*@
+        <button class="btn btn-primary btn-lg" onclick="location.href='@Url.Action("Registration", "User")';return false;">CLICK HERE TO REGISTER</button>
+        
 
 
+        <footer></footer>
+</body>
+</html>

@@ -100,6 +100,7 @@
     <Content Include="App_Data\UserDatabase_log.ldf">
       <DependentUpon>UserDatabase.mdf</DependentUpon>
     </Content>
+    <Content Include="Content\bootstrap-cerulean.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
@@ -109,6 +110,10 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="images\blue-and-purple-cosmic-sky-956999.jpg" />
+    <Content Include="images\homepage-banner.jpg" />
+    <Content Include="images\index-banner.jpeg" />
+    <Content Include="images\surface-laptop-2-review-8119.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />

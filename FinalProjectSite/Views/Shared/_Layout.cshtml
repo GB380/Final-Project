@@ -3,13 +3,22 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    
     <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
-    <link href="~/Content/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap-cerulean.css" rel="stylesheet" type="text/css" />
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <style>       
+        .welcome{
+            color:white;
+        }
+
+        .mynav-right{
+            float: right;
+        }
+    </style>
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -29,10 +38,23 @@
                     <li>@Html.ActionLink("Encryption", "Encryption", "Encryption", new { area = "" }, new { @class = "navbar-brand" })</li>
                     <li>@Html.ActionLink("Q&A", "QANDA", "QANDA", new { area = "" }, new { @class = "navbar-brand" })</li>
                     <li>@Html.ActionLink("Contact Us", "ContactUs", "ContactUs", new { area = "" }, new { @class = "navbar-brand" })</li>
+                        <div class="navbar-right">
+                        <p class="welcome"> Welcome @HttpContext.Current.User.Identity.Name</p>
+                    
+                        @if (Request.IsAuthenticated)
+                        {
+                            using (Html.BeginForm("Logout", "User", FormMethod.Post, new { id = "logoutForm" }))
+                            {
+                                <a href="javascript:document.getElementById('logoutForm').submit()">Logout</a>
+                            }
+                        }
+                        
+                    </div>
                 </ul>
             </div>
         </div>
-    </div>
+        
+     </div>
 
     <div class="container body-content">
         @RenderBody()
