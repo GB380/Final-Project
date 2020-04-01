@@ -110,6 +110,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="images\about-us-password.png" />
     <Content Include="images\baiting.jpg" />
     <Content Include="images\blue-and-purple-cosmic-sky-956999.jpg" />
     <Content Include="images\Fishing.jpg" />
