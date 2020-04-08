@@ -140,10 +140,10 @@
     <Compile Include="Controllers\ContactUsController.cs" />
     <Compile Include="Controllers\EncryptionController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ModuleController.cs" />
     <Compile Include="Controllers\QANDAController.cs" />
     <Compile Include="Controllers\SocialEngineeringController.cs" />
     <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Controllers\UserProfileController.cs" />
     <Compile Include="Crypto.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -210,6 +210,8 @@
     <Content Include="Views\Encryption\Encryption.cshtml" />
     <Content Include="Views\SocialEngineering\SocialEngineeringTwo.cshtml" />
     <Content Include="Views\SocialEngineering\SocialEngineeringThree.cshtml" />
+    <Content Include="Views\UserProfile.cshtml" />
+    <Content Include="Views\Home\LoginWelcome.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -217,7 +219,9 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Views\UserProfile\" />
+  </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>

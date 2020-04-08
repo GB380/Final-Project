@@ -9,6 +9,7 @@ namespace FinalProjectSite.Controllers
     public class EncryptionController : Controller
     {
         // GET: Encryption
+        [Authorize]
         public ActionResult Encryption()
         {
             return View();

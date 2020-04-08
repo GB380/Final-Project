@@ -145,7 +145,7 @@ namespace FinalProjectSite.Controllers
                         }
                         else
                         {
-                            return RedirectToAction("Index", "Home");
+                            return RedirectToAction("LoginWelcome", "Home");
                         }
                     }
                     else

@@ -6,10 +6,10 @@ using System.Web.Mvc;
 
 namespace FinalProjectSite.Controllers
 {
-    public class ModuleController : Controller
+    public class UserProfileController : Controller
     {
-        // GET: Module
-        public ActionResult Modules()
+        // GET: UserProfile
+        public ActionResult Index()
         {
             return View();
         }

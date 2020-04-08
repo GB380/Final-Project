@@ -9,6 +9,7 @@ namespace FinalProjectSite.Controllers
     public class AboutController : Controller
     {
         // GET: About
+        
         public ActionResult AboutUs()
         {
             return View();
