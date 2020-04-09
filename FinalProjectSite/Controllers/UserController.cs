@@ -55,7 +55,7 @@ namespace FinalProjectSite.Controllers
                 using (UserDatabaseEntities dc = new UserDatabaseEntities())
                 {
                     dc.Users.Add(user);
-                    dc.SaveChanges();
+                    dc.SaveChanges(); //issue with database need to have at least one user registered otherwise ID doesnt auto increment properly.
 
                     //Send Email to User
                     SendVerificationLinkEmail(user.Email_Address, user.Activation_Code.ToString());
