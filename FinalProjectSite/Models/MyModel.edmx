@@ -9,7 +9,7 @@
           <Key>
             <PropertyRef Name="UserID" />
           </Key>
-          <Property Name="UserID" Type="int" Nullable="false" />
+          <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="First Name" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Last Name" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Email Address" Type="varchar" MaxLength="254" Nullable="false" />

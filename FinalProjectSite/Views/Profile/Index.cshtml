@@ -1,0 +1,61 @@
+﻿@model IEnumerable<FinalProjectSite.Models.User>
+
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>List of Registered Users</h2>
+
+<p>
+    Please do not change any of the User accounts unless you know to do so or a User has requested an action for GDPR purposes. <br />
+    Please note that the search box searches by <b>Email Address</b> and not any other field. So when searching for a user search by their email address which should be provided by the owner of the account in an email or correspondance.
+</p>
+@using (Html.BeginForm("Index", "Profile", FormMethod.Get))
+{
+    <input type="text" name="search" class="form-control" placeholder="Enter Email Address here">
+    @*<input type="text" name="search" />*@
+
+    @*<Input Type="submit" value="search" name="search" />*@
+    <button type="submit" value="search" name="search "class="btn btn-default">Search</button>
+}
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.First_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Last_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email_Address)
+        </th>
+  
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.First_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Last_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email_Address)
+            </td>
+     
+
+
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.UserID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.UserID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.UserID })
+            </td>
+        </tr>
+    }
+
+</table>

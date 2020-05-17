@@ -55,8 +55,8 @@ namespace FinalProjectSite.Controllers
                 using (UserDatabaseEntities dc = new UserDatabaseEntities())
                 {
                     dc.Users.Add(user);
-                    dc.SaveChanges(); //issue with database need to have at least one user registered otherwise ID doesnt auto increment properly.
-
+                    dc.SaveChanges(); 
+                    //E:\Project Site\FinalProjectSite\FinalProjectSite\App_Data\UserDatabase.mdf
                     //Send Email to User
                     SendVerificationLinkEmail(user.Email_Address, user.Activation_Code.ToString());
                     message = "Registration Successful. Account activation link " +
@@ -201,9 +201,9 @@ namespace FinalProjectSite.Controllers
                 subject = "Your account has been successfully created!";
 
 
-                body = "<br/><br/> Your Online Security Solutions account has been" +
+                body = "<br/><br/> Your Online Security Solutions account has been " +
                     "successfully created. Please click on the below link to verify your account" +
-                    "<a href='" + link + "'>" + link + "</a> ";
+                    "<br  /><a href=' " + link + "'>" + link + "</a> ";
             }
             else if (emailFor == "ResetPassword")
             {
@@ -319,11 +319,15 @@ namespace FinalProjectSite.Controllers
             }
             else
             {
-                message = "Password Reset Unsuccessful. Please contact an Administrator";
+                message = "Password Reset Unsuccessful. Please contact an Administrator using the Contact Us Page.";
             }
             ViewBag.Message = message;
             return View(model);
         }
+   
+
+        
+
     }
    
 }

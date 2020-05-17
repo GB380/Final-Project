@@ -1,0 +1,58 @@
+﻿
+@{
+    ViewBag.Title = "Sitemap";
+}
+<title>@ViewBag.Title</title>
+<h2><u>Sitemap</u></h2>
+<div class="col-md-3">
+    <h2><u>About Us</u></h2>
+    <a href='@Url.Action("AboutUs", "About")'>Index</a>
+    <br />
+    <a href='@Url.Action("Registration", "User")'>Register</a>
+</div>
+<div class="col-md-3">
+    <h2><u>Social Engineering</u></h2>
+    <a href='@Url.Action("SocialEngineering", "SocialEngineering")'>Introduction</a>
+    <br />
+    <a href='@Url.Action("SocialEngineering", "SocialEngineeringTwo")'>A Look at Social Engineering</a>
+    <br />
+    <a href='@Url.Action("SocialEngineering", "SocialEngineeringThree")'>Types of Attacks</a>
+    <br />
+    <a href='@Url.Action("SocialEngineering", "SocialEngineeringFour")'>How to Prevent and protect against attacks</a>
+    <br />
+    <a href='@Url.Action("SocialEngineering", "SocialEngineeringFive")'>Quiz</a>
+</div>
+<div class="col-md-3">
+    <h2><u>Encryption</u></h2>
+    <a href='@Url.Action("Encryption", "Encryption")'>Index</a>
+</div>
+<div class="col-md-3">
+    <h2><u>Q&A</u></h2>
+    <a href='@Url.Action("QANDA", "QANDA")'>Index</a>
+    <a href=''>Enquiry Confirmation</a>
+
+</div>
+<div class="col-md-3">
+    <h2><u>Contact Us</u></h2>
+    <a href='@Url.Action("ContactUs", "ContactUs")'>Index</a>
+    <br />
+    <a href='@Url.Action("QANDA", "QANDA")'>Q&A</a>
+</div>
+<div class="col-md-3">
+    <h2><u>Account</u></h2>
+    <a href='@Url.Action("Login", "User")'>Log-in</a>
+    <br />
+    <a href='@Url.Action("Registration", "User")'>Register</a>
+</div>
+<br />
+<div class="col-md-12"></div>
+<h3><u>Account (Must be logged in)</u></h3>
+<a href='@Url.Action("", "")'>User Account Profile</a>
+<br />
+<a href='@Url.Action("", "")'>Account Details</a>
+<br />
+<a href='@Url.Action("", "")'>Delete Account</a>
+</div>
+<div class="col-md-12">
+    <img class="img-responsive" src="~/images/Sitemap.png" alt="Image of the sitemap.">
+</div>

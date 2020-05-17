@@ -100,26 +100,60 @@
     <Content Include="App_Data\UserDatabase_log.ldf">
       <DependentUpon>UserDatabase.mdf</DependentUpon>
     </Content>
-    <Content Include="Content\bootstrap-cerulean.css" />
+    <Content Include="Content\bootstrap-flatly.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\style.css" />
+    <Content Include="images\1200px-MVC-Process.svg.png" />
+    <Content Include="images\fixed-home-img.jpg" />
+    <Content Include="images\frank.jpeg" />
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Files\Module_Information.pdf" />
+    <EntityDeploy Include="Models\QuizModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>QuizModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="images\how-to-improve-your-online-security-and-privacy-in-10-easy-steps.jpg" />
+    <Content Include="images\online-security1.png" />
+    <Content Include="images\redone-logo.png" />
+    <Content Include="images\register.jpg" />
+    <Content Include="images\social-engineering-hacking.jpg" />
+    <Content Include="Models\QuizModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QuizModel.edmx</DependentUpon>
+      <LastGenOutput>QuizModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\QuizModel.edmx.diagram">
+      <DependentUpon>QuizModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\QuizModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QuizModel.edmx</DependentUpon>
+      <LastGenOutput>QuizModel.cs</LastGenOutput>
+    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="images\about-us-password.png" />
     <Content Include="images\baiting.jpg" />
     <Content Include="images\blue-and-purple-cosmic-sky-956999.jpg" />
     <Content Include="images\Fishing.jpg" />
     <Content Include="images\homepage-banner.jpg" />
+    <Content Include="images\homepage-image2.jpg" />
     <Content Include="images\index-banner.jpeg" />
+    <Content Include="images\instagram.png" />
     <Content Include="images\phishing.jpg" />
+    <Content Include="images\Sitemap.png" />
     <Content Include="images\Social-Engineering-Main.jpg" />
     <Content Include="images\surface-laptop-2-review-8119.jpg" />
+    <Content Include="images\tailgating.jpg" />
+    <Content Include="images\twitter.png" />
+    <Content Include="images\verizon-1.png" />
     <Content Include="images\Vishing.png" />
+    <Content Include="images\account-activation.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -130,6 +164,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="SitemapFinal.xml" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -140,14 +175,15 @@
     <Compile Include="Controllers\ContactUsController.cs" />
     <Compile Include="Controllers\EncryptionController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProfileController.cs" />
     <Compile Include="Controllers\QANDAController.cs" />
     <Compile Include="Controllers\SocialEngineeringController.cs" />
     <Compile Include="Controllers\UserController.cs" />
-    <Compile Include="Controllers\UserProfileController.cs" />
     <Compile Include="Crypto.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\DataClasses.cs" />
     <Compile Include="Models\Extended\User.cs" />
     <Compile Include="Models\MyModel.Context.cs">
       <AutoGen>True</AutoGen>
@@ -170,6 +206,27 @@
     </Compile>
     <Compile Include="Models\UserLogin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Models\QuizModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuizModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\QuizModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuizModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\QuizModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuizModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SEquiz.cs">
+      <DependentUpon>QuizModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SEQuizP_Result.cs">
+      <DependentUpon>QuizModel.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config">
@@ -210,8 +267,14 @@
     <Content Include="Views\Encryption\Encryption.cshtml" />
     <Content Include="Views\SocialEngineering\SocialEngineeringTwo.cshtml" />
     <Content Include="Views\SocialEngineering\SocialEngineeringThree.cshtml" />
-    <Content Include="Views\UserProfile.cshtml" />
     <Content Include="Views\Home\LoginWelcome.cshtml" />
+    <Content Include="Views\SocialEngineering\SocialEngineeringFour.cshtml" />
+    <Content Include="Views\SocialEngineering\SocialEngineeringFive.cshtml" />
+    <Content Include="Views\Home\Sitemap.cshtml" />
+    <Content Include="Views\Profile\Index.cshtml" />
+    <Content Include="Views\Profile\Details.cshtml" />
+    <Content Include="Views\Profile\Edit.cshtml" />
+    <Content Include="Views\Profile\Delete.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -219,9 +282,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\UserProfile\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>

@@ -1,0 +1,91 @@
+﻿@model IEnumerable<FinalProjectSite.Models.SEquiz>
+@{
+    ViewBag.Title = "Social Engineering - Page 5";
+}
+<title> @ViewBag.Title</title>
+<center>
+    <h2>Social Engineering Quiz</h2>
+
+    <p class="lead"> In this section you can answer some questions to help remember what you have learnt so far.</p>
+    <table>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.qID ) @item.Question </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="radio" id="Answer1" name="@item.qID" class="radoption" value="@item.Answer1" />@item.Answer1<br />
+                    <input type="radio" id="Answer2" name="@item.qID" class="radoption" value="@item.Answer2" />@item.Answer2<br />
+                    <input type="radio" id="Answer3" name="@item.qID" class="radoption" value="@item.Answer3" />@item.Answer3<br />
+                    <input type="radio" id="Answer4" name="@item.qID" class="radoption" value="@item.Answer4" />@item.Answer4<br />
+                    <label id="labelcorrectans" name="@item.qID" class="radoption" style="display:none;"><b style="color:blue;">The Correct Answer Is : @item.CorrectAns</b></label>
+                </td>
+            </tr>
+        }
+    </table>
+    <button id="but1" onclick="displayresults" type="button" class="btn btn-default">Submit</button>
+    @*<button type="button" id="but1" onclick="displayresults" class="btn btn-default">Submit</button>*@
+    <br />
+
+    <label id="selectedrad"> </label>
+</center>
+
+<footer>
+
+
+    <br />
+    <br />
+    <div>
+        <ul class="pagination pagination-lg">
+            <li class="page-item">
+                <a class="page-link" onclick="location.href='@Url.Action("SocialEngineeringFour", "SocialEngineering")';return false;">&laquo;</a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" onclick="location.href='@Url.Action("SocialEngineering", "SocialEngineering")';return false;">1</a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" onclick="location.href='@Url.Action("SocialEngineeringTwo", "SocialEngineering")';return false;">2</a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" onclick="location.href='@Url.Action("SocialEngineeringThree", "SocialEngineering")';return false;">3</a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" onclick="location.href='@Url.Action("SocialEngineeringFour", "SocialEngineering")';return false;">4</a>
+            </li>
+            <li class="page-item active">
+                <a class="page-link" onclick="location.href='@Url.Action("SocialEngineeringFive", "SocialEngineering")';return false;">5</a>
+            </li>
+            <li class="page-item disabled">
+                <a class="page-link" onclick="location.href='@Url.Action("SocialEngineeringTwo", "SocialEngineering")';return false;">&raquo;</a>
+            </li>
+        </ul>
+    </div>
+
+
+</footer>
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#but1").click(function () {
+            $(".radoption").show();
+            $(".radoption").attr("disabled", true);
+
+        });
+    });
+
+
+
+
+    function displayresults() {
+        document.getElementById("selectedrad").innerHTML = "";
+        var results = document.getElementsByTagName('input')
+        for (i = 0; i < results.length; i++) {
+            if (results[i].type == "radio") {
+                document.getElementById("selectedrad").innerHTML
+                    += "Q )" + results[i].name + "Your Selected Answer Was: " + results[i].value + "<br/>";
+            }
+        }
+    }
+
+</script>

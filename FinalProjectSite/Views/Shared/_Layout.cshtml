@@ -1,78 +1,55 @@
-﻿<!DOCTYPE html>
+﻿
+
+
 
 <html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <link href="~/Content/bootstrap-flatly.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
-    <link href="~/Content/bootstrap-cerulean.css" rel="stylesheet" type="text/css" />
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
     <script src="~/Scripts/jquery-1.10.2.intellisense.js"></script>
     <script src="~/Scripts/jquery-1.10.2.js"></script>
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 
-    
+
+    <style>
+
+
+        .logo {
+            height: 55px;
+            padding-right: 15px;
+            padding-left: 5px;
+        }
+
+        .navbar-brand {
+            min-height: 55px;
+            padding: 0 5px 10px;
+        }
+
+        .fa {
+            padding: 15px;
+            /*font-size: 10px; change for size if fa- not needed*/ 
+            color: #FFF;
+        }
+
+            .fa:hover {
+                color: #D5D5D5;
+                text-decoration: none;
+            }
+
+        /*.icon {
+            max-width: 200px;
+        }*/
+    </style>
 </head>
 <body>
-    @*<div class="navbar navbar-inverse navbar-fixed-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" > @Html.ActionLink("Online Security Solutions", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })  </a>
-                </div>
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li>@Html.ActionLink("About Us", "AboutUs", "About", new { area = "" }, new { @class = "navbar-brand" })</li>
-                        <li class="dropdown">
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                                Modules
-                                <span class="caret"></span>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#" onclick="location.href='@Url.Action("SocialEngineering", "SocialEngineering")'">Social Engineering</a></li>
-                                <li><a href="#" onclick="location.href='@Url.Action("Encryption", "Encryption")'">Encryption</a></li>
 
-                            </ul>
-                        </li>
-                        <li> @Html.ActionLink("Q&A", "QANDA", "QANDA", new { area = "" }, new { @class = "navbar-brand" })</li>
-                        <li> @Html.ActionLink("Contact Us", "ContactUs", "ContactUs", new { area = "" }, new { @class = "navbar-brand" })</li>
 
-                    </ul>
-
-                    @if (Request.IsAuthenticated)
-                    {
-                        using (Html.BeginForm("Logout", "User", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
-                        {
-                            @Html.AntiForgeryToken()
-
-                            <ul class="nav navbar-nav navbar-right">
-                                <li class="h4">
-                                    Welcome @HttpContext.Current.User.Identity.Name
-                                </li>
-                                <li><a href="javascript:document.getElementById('logoutForm').submit()">Log Out</a></li>
-                            </ul>
-                        }
-                    }
-                    else
-                    {
-                        <ul class="nav navbar-nav navbar-right">
-                            <li>@Html.ActionLink("Register", "Registration", "User", routeValues: null, htmlAttributes: new { id = "Register" })</li>
-                            <li>@Html.ActionLink("Log in", "Login", "User", routeValues: null, htmlAttributes: new { id = "Login" })</li>
-                        </ul>
-                    }
-
-                </div>
-            </div>
-
-        </div>*@
-
-    <nav class="navbar navbar-inverse navbar-fixed-top">
+    <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -82,7 +59,8 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand">@Html.ActionLink("Online Security Solutions", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })</a>
+                @*<a class="navbar-brand">@Html.ActionLink("Index", "Home", new { area = "" })</a>*@
+                <a class="navbar-brand" href="#" onclick="location.href='@Url.Action("Index", "Home")'"><img src="~/images/redone-logo.png" alt="OSS Logo" class="img-responsive logo" /></a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -99,50 +77,103 @@
                     </li>
                     <li><a href="#" onclick="location.href='@Url.Action("QANDA", "QANDA")'">Q&A</a></li>
                     <li><a href="#" onclick="location.href='@Url.Action("ContactUs", "ContactUs")'">Contact Us</a></li>
-                </ul>
-                <form class="navbar-form navbar-left">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search">
-                    </div>
-                    <button type="submit" class="btn btn-default">Submit</button>
-                </form>
-                @if (Request.IsAuthenticated)
-                {
-                    using (Html.BeginForm("Logout", "User", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+                    @if (Request.IsAuthenticated)
                     {
-                        @Html.AntiForgeryToken()
 
-                        <ul class="nav navbar-nav navbar-right">
-                            <li style="color:azure">
-                               Welcome @HttpContext.Current.User.Identity.Name
-                            </li>
-                            <li><a href="javascript:document.getElementById('logoutForm').submit()">Log Out</a></li>
+
+                        <li><a href="#" onclick="location.href='@Url.Action("Index", "Profile")'">Admin Area</a></li>
+
+
+
+                    }
+                </ul>
+                
+                    @if (Request.IsAuthenticated)
+                    {
+                        using (Html.BeginForm("Logout", "User", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+                        {
+                            @Html.AntiForgeryToken()
+
+                            <ul class="navbar-nav navbar-right">
+
+
+                                <li style="padding-right:20px;"><a href="#">@HttpContext.Current.User.Identity.Name</a></li>
+
+                                <li style="padding-right:20px;"><a href="javascript:document.getElementById('logoutForm').submit()">Log Out</a></li>
+                            </ul>
+                           
+                        }
+                    }
+                    else
+                    {
+                        <ul class="navbar-nav navbar-right">
+                            <li style="padding-right:20px; padding-top:20px;">@Html.ActionLink("Register", "Registration", "User", routeValues: null, htmlAttributes: new { id = "Register" })</li>
+                            <li style="padding-right:20px; padding-top:20px;">@Html.ActionLink("Log in", "Login", "User", routeValues: null, htmlAttributes: new { id = "Login" })</li>
                         </ul>
                     }
-                }
-                else
-                {
-                    <ul class="nav navbar-nav navbar-right">
-                        <li>@Html.ActionLink("Register", "Registration", "User", routeValues: null, htmlAttributes: new { id = "Register" })</li>
-                        <li>@Html.ActionLink("Log in", "Login", "User", routeValues: null, htmlAttributes: new { id = "Login" })</li>
-                    </ul>
-                }
+                    
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
     </nav>
 
-    <div class="container body-content">
+    <div class="container-fluid body-content">
         @RenderBody()
-
-        <footer class="col-md-12">
-            <hr />
-
-            <p>&copy; @DateTime.Now.Year - Online Security Solutions</p>
-        </footer>
     </div>
+        <hr />
+        <footer class="container-fluid text-center" style="background-color:#2c3e50;">
+            
 
+
+            <div class="row">
+                <div class="col-sm-3">
+                    <h3 style="color:white;"><u>Socials</u></h3>
+                    <a href="#" class="fa fa-facebook fa-3x"></a>
+                    <a href="#" class="fa fa-twitter fa-3x"></a>
+                    <a href="#" class="fa fa-instagram fa-3x"></a>
+                    <a href="https://www.linkedin.com/in/george-brackpool-384ba71a2/" class="fa fa-linkedin fa-3x"></a>
+                </div>
+
+                <div class="col-sm-3">
+                    <h3 style="color:white;"><u>Rescources</u></h3>
+                    <a href="#" onclick="location.href='@Url.Action("AboutUs", "About")'">Module Information Download</a>
+                    <br />
+                    <a href="#" onclick="location.href='@Url.Action("Sitemap", "Home")'">SiteMap</a>
+                    <br />
+                    <a href="#" onclick="location.href='@Url.Action("SocialEngineering", "SocialEngineering")'">Social Engineering</a>
+                    <br />
+                    <a href="#" onclick="location.href='@Url.Action("Encryption", "Encryption")'">Encryption</a>
+                </div>
+
+
+
+                <div class="col-sm-3">
+
+
+                    <h3 style="color:white;"><u>About</u></h3>
+                    <a href="#" onclick="location.href='@Url.Action("AboutUs", "About")'">About Us</a>
+                    <br />
+                    <a href="#" onclick="location.href='@Url.Action("QANDA", "QANDA")'">Q&A</a>
+                    <br />
+                    <a href="#" onclick="location.href='@Url.Action("ContactUs", "ContactUs")'">Contact Us</a>
+                </div>
+
+                <div class="col-sm-3">
+
+
+                    <h3 style="color:white;"><u>Helpful CyberSecurity Sites</u></h3>
+                    <a href="https://www.kaspersky.co.uk/">Kapersky</a>
+                    <br />
+                    <a href="https://krebsonsecurity.com/">Krebs On Security</a>
+                    <br />
+                    <a href="https://www.bleepingcomputer.com/">Bleeping Computer</a>
+
+                </div>
+            </div>
+        </footer>
+
+    
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
-    @RenderSection("Scripts", false);
+    @RenderSection("Scripts", false)
 </body>
 </html>

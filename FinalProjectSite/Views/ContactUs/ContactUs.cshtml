@@ -2,7 +2,100 @@
 @{
     ViewBag.Title = "Contact Us";
 }
+<style>
+    .map-responsive {
+        overflow: hidden;
+        padding-bottom: 56.25%;
+        position: relative;
+        height: 50vh;
+        border: solid;
+        border-color: black;
+        border-width: 1px;
+    }
 
-<h2>Contact Us</h2>
-<p>Test</p>
+        .map-responsive iframe {
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+          
+        }
+</style>
+<title>@ViewBag.Title</title>
+<h1 class="text-center">Contact Us</h1>
+
+<div class="col-md-8">
+    <h2>How to get in touch!</h2>
+    <p>If you have a complaint, want to report an issue or make an enquiry then please contact us using one of these contact's below. Or alternatively use the enquiry form at the bottom of this page to send us an enquiry or to report an issue. </p>
+    <div class="jumbotron">
+    <p> Telephone Contact: 0123456789 </p>
+     <p>Lines Open: Mon-Fri 8.00AM - 6.00PM (GMT+1) </p>
+   
+    <p> Email: OnlineSecSolutions@gmail.com</p>
+        <p> <u>Mail Us!</u> <br />
+        Send any Letters to - Lewes Road, Brighton BN2 4HP</p>
+    
+    
+    </div>
+    </div>
+<div class="col-md-4">
+    <h2>Where to find us</h2>
+    <p>Since we are still a small business, we will not always be able to speak to you in person but you are free to come in and chat to us in our office. You can find our building on the map below if you are in the area and want to see us or offer a business opportunity. Please speak to the receptionist at the front desk.</p>
+    <div class="map-responsive">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2519.2049575580345!2d-0.12040688428755766!3d50.84588877953188!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48758f603a74601b%3A0x22e5a83d8f966d60!2sHuxley%20Building%2C%20University%20of%20Brighton!5e0!3m2!1sen!2suk!4v1586874995202!5m2!1sen!2suk" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+        </div>
+</div>
+<div class="col-md-12">
+    <h1></h1>
+    @using (Html.BeginForm("ContactUs", "ContactUs", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <form>
+            <fieldset>
+
+                <h2><strong><u>Send us an Enquiry </u><br /> </strong></h2>
+
+
+
+                <p class="text-success">
+                    <strong>@ViewBag.Message</strong>
+                </p>
+                <br />
+                <br />
+                <div class="form-group">
+                    <label for="Name">Full Name</label>
+                    <input type="text" name="Name" class="form-control" id="txtName" placeholder="Enter your full name">
+
+                </div>
+
+                <div class="form-group">
+                    <label for="EmailAddress">Email Address</label>
+                    <input type="email" name="EmailId" class="form-control" id="txttoaddress" placeholder="Enter your Email Address">
+                    <small id="name" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="exampleSelect1">Subject of Enquiry</label>
+                    <select class="form-control" id="txtsubject" name="Subject">
+                        <option>General Question</option>
+                        <option>Account Problem</option>
+                        <option>Business Enquiry</option>
+                        <option>Request</option>
+                        <option>Bug Report or Site Issue</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="Text">Type your message here</label>
+                    <textarea class="form-control" id="txtmessage" name="Message" rows="3" style="margin-top: 0px; margin-bottom: 0px; height: 99px;"></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-default">Submit</button>
+
+            </fieldset>
+        </form>
+    }
+</div>
+
 

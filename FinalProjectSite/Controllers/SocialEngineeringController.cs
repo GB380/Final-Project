@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FinalProjectSite.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -23,6 +24,18 @@ namespace FinalProjectSite.Controllers
         public ActionResult SocialEngineeringThree()
         {
             return View();
+        }
+
+        public ActionResult SocialEngineeringFour()
+        {
+            return View();
+
+        }
+        public ActionResult SocialEngineeringFive()
+        {
+            UserDatabaseEntities1 nd = new UserDatabaseEntities1();
+                return View(nd.Fun_Quiz());
+
         }
     }
 }
