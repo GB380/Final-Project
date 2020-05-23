@@ -122,6 +122,7 @@
     <Content Include="images\online-security1.png" />
     <Content Include="images\redone-logo.png" />
     <Content Include="images\register.jpg" />
+    <Content Include="images\Sitemap.jpg" />
     <Content Include="images\social-engineering-hacking.jpg" />
     <Content Include="Models\QuizModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -146,7 +147,6 @@
     <Content Include="images\index-banner.jpeg" />
     <Content Include="images\instagram.png" />
     <Content Include="images\phishing.jpg" />
-    <Content Include="images\Sitemap.png" />
     <Content Include="images\Social-Engineering-Main.jpg" />
     <Content Include="images\surface-laptop-2-review-8119.jpg" />
     <Content Include="images\tailgating.jpg" />
@@ -164,7 +164,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
-    <Content Include="SitemapFinal.xml" />
+    <Content Include="Sitemap_Final.xml" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>

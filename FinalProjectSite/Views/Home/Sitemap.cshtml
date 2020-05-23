@@ -3,7 +3,7 @@
     ViewBag.Title = "Sitemap";
 }
 <title>@ViewBag.Title</title>
-<h2><u>Sitemap</u></h2>
+<h2>Sitemap</h2>
 <div class="col-md-3">
     <h2><u>About Us</u></h2>
     <a href='@Url.Action("AboutUs", "About")'>Index</a>
@@ -29,14 +29,14 @@
 <div class="col-md-3">
     <h2><u>Q&A</u></h2>
     <a href='@Url.Action("QANDA", "QANDA")'>Index</a>
-    <a href=''>Enquiry Confirmation</a>
+    <a href='@Url.Action("ContactUs", "ContactUs")'>Contact Us(Enquiry)</a>
 
 </div>
 <div class="col-md-3">
     <h2><u>Contact Us</u></h2>
     <a href='@Url.Action("ContactUs", "ContactUs")'>Index</a>
     <br />
-    <a href='@Url.Action("QANDA", "QANDA")'>Q&A</a>
+
 </div>
 <div class="col-md-3">
     <h2><u>Account</u></h2>
@@ -45,14 +45,8 @@
     <a href='@Url.Action("Registration", "User")'>Register</a>
 </div>
 <br />
-<div class="col-md-12"></div>
-<h3><u>Account (Must be logged in)</u></h3>
-<a href='@Url.Action("", "")'>User Account Profile</a>
-<br />
-<a href='@Url.Action("", "")'>Account Details</a>
-<br />
-<a href='@Url.Action("", "")'>Delete Account</a>
-</div>
+
+
 <div class="col-md-12">
-    <img class="img-responsive" src="~/images/Sitemap.png" alt="Image of the sitemap.">
+    <img class="img-responsive" src="~/images/Sitemap.jpg" alt="Image of the sitemap.">
 </div>
