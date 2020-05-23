@@ -1,0 +1,1 @@
+Please note that some of the commits state a few months ago this is due to me not wanting to commit as my visual studio setup was not working with Github correctly so the commits are a bit of a mess but it seems to have stored them locally when i tried to upload my files. I did not fully understand how Github worked and was afraid of corrupting my project.
