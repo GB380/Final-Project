@@ -137,6 +137,8 @@
       <DependentUpon>QuizModel.edmx</DependentUpon>
       <LastGenOutput>QuizModel.cs</LastGenOutput>
     </Content>
+    <None Include="Properties\PublishProfiles\FinalProjectSite-mvc - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\FinalProjectSiteGB - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="images\about-us-password.png" />
     <Content Include="images\baiting.jpg" />
